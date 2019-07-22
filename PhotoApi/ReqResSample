@@ -1,0 +1,8 @@
+
+post json for create user
+{
+    "firstName": "Mandar1",
+    "lastName": "Kulkarni1",
+    "email": "msk@yahoo171.com",
+    "password": "qwert"
+}
