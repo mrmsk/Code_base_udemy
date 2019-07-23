@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 //Indicates the this class represents the table in db.
 @Entity
-@Table(name = "PhotoUsers")
+@Table(name = "myusers")
 public class UserEntity implements Serializable {
 
 	/**
@@ -20,7 +20,7 @@ public class UserEntity implements Serializable {
 	// Data Base generated ID.
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 	
 	@Column(nullable = false, length = 50)
 	private String lastName;
@@ -37,13 +37,6 @@ public class UserEntity implements Serializable {
 	@Column(nullable = false, length = 50)
 	private String firstName;
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public String getLastName() {
 		return lastName;
@@ -83,6 +76,14 @@ public class UserEntity implements Serializable {
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 }
