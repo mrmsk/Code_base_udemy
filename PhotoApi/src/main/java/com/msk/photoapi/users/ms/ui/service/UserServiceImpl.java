@@ -15,23 +15,22 @@ import com.msk.photoapi.users.ms.ui.model.shared.UserDto;
 public class UserServiceImpl implements UsersServiceI {
 	@Autowired
 	UsersRepository usersRepository;
-	
-	public UserServiceImpl(UsersRepository usersRepository){
-		this.usersRepository=usersRepository;
-		
+
+	public UserServiceImpl(UsersRepository usersRepository) {
+		this.usersRepository = usersRepository;
+
 	}
 
 	@Override
 	public UserDto createUser(UserDto userDetails) {
 		userDetails.setUserId(UUID.randomUUID().toString());
-		ModelMapper mapper= new ModelMapper();
+		ModelMapper mapper = new ModelMapper();
 		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-		UserEntity userEntity=mapper.map(userDetails, UserEntity.class);
+		UserEntity userEntity = mapper.map(userDetails, UserEntity.class);
 		userEntity.setEncryptedPwd("Tes1");
 		usersRepository.save(userEntity);
-		return null;
+		UserDto returnValue = mapper.map(userEntity, UserDto.class);
+		return returnValue;
 	}
-
-
 
 }
