@@ -1,8 +1,17 @@
 
 post json for create user
 {
-    "firstName": "Mandar1",
+    "firstName": "Mandy k",
     "lastName": "Kulkarni1",
-    "email": "msk@yahoo171.com",
-    "password": "qwert"
+    "email": "msk@87ij.com",
+    "password": "123456"
 }
+----------------------------------------------
+for check user though web security
+http://p5lap-g01l10x.dir.svc.accenture.com:65086/users/login
+{
+   
+    "email": "msk@87ij.com",
+    "password": "12345678"
+}
+----------------------------------------------
