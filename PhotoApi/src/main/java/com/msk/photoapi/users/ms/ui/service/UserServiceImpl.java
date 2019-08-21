@@ -53,4 +53,13 @@ public class UserServiceImpl implements UsersServiceI {
 		return new User(usrentity.getEmail(),usrentity.getEncryptedPwd(),true,true,true,true,new ArrayList<>());
 	}
 
+	@Override
+	public UserDto getUserDetailsByEmail(String Email) {
+		UserEntity usrentity=usersRepository.findByEmail(Email);
+		if(usrentity==null) {
+			throw new UsernameNotFoundException("User not found in Records"+Email);
+		}
+		return new ModelMapper().map(usrentity, UserDto.class);
+	}
+
 }

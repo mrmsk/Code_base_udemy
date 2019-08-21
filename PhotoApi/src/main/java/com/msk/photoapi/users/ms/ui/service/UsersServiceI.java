@@ -7,5 +7,6 @@ import com.msk.photoapi.users.ms.ui.model.shared.UserDto;
 public interface UsersServiceI extends UserDetailsService{
 	
 	UserDto createUser(UserDto UserDetails);
+	UserDto getUserDetailsByEmail(String Email);
 
 }
